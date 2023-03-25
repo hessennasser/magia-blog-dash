@@ -19,6 +19,7 @@ app.use(cors());
 app.use(cookieParser());
 app.options("*", cors());
 app.use(compression());
+app.set("views", "views");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
