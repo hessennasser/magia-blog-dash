@@ -26,7 +26,7 @@ export const blogController = {
   getAll: async (req, res) => {
     try {
       const blogFound = await BlogSchema.find();
-      res.render("main", { blog: blogFound });
+      res.render("index", { blog: blogFound });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }
