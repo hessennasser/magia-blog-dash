@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script
+      src="https://cdn.tiny.cloud/1/0efubq5wifjpjkf470hjpigv460m6yats61ur8s6ulwq8c8z/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+  </head>
+  <body>
+    <%- include('./components/Sidebar') %>
+    <main>
+      <!-- Start Head -->
+      <div class="head">
+        <h1>Create Post</h1>
+      </div>
+      <!-- End Head -->
+      <!-- Start Form -->
+      <form
+        class="form"
+        id="form"
+        enctype="multipart/form-data"
+        method="POST"
+        action="/api/create-blog"
+      >
+        <div>
+          <input type="file" id="img" name="img" autocomplete="off" />
+          <label>Img <span>*</span></label>
+        </div>
+        <div>
+          <input type="text" id="title" name="title" autocomplete="off" />
+          <label for="title">Title <span>*</span></label>
+        </div>
+        <div>
+          <input type="text" id="decs" name="decs" autocomplete="off" />
+          <label for="decs">Description <span>*</span></label>
+        </div>
+        <div>
+          <input type="text" id="slug" name="slug" autocomplete="off" />
+          <label for="slug">Slug</label>
+        </div>
+        <div>
+          <input type="text" id="user" name="user" autocomplete="off" />
+          <label for="user">User <span>*</span></label>
+        </div>
+        <div>
+          <input type="text" id="topics" name="topics" autocomplete="off" />
+          <label for="topics">Topics <span>*</span></label>
+        </div>
+        <div>
+          <textarea id="body" name="body">
+            Write Body
+          </textarea>
+        </div>
+        <button type="submit">Create Post</button>
+      </form>
+      <!-- End Form -->
+    </main>
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <%- include('./components/Sidebar') %>
+    <main>
+      <!-- Start Head -->
+      <div class="head">
+        <h1>Update Post List</h1>
+      </div>
+      <!-- End Head -->
+      <!-- Start Form -->
+      <% blog.forEach(element => { %>
+      <div class="element">
+        <p><%= element.title %></p>
+        <a
+          data-id="<%= element._id %>"
+          href="/dashboard/update/<%= element.slug %>"
+          >Update This</a
+        >
+      </div>
+      <% }) %>
+      <!-- End Form -->
+    </main>
+  </body>
+</html>

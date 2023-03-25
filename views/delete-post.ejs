@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <%- include('./components/Sidebar') %>
+    <main>
+      <!-- Start Head -->
+      <div class="head">
+        <h1>Delete Post List</h1>
+      </div>
+      <!-- End Head -->
+      <!-- Start Form -->
+      <% blog.forEach(element => { %>
+      <div class="element">
+        <p><%= element.title %></p>
+        <span id="deletebtn" data-slug="<%= element.slug %>">Delete This</span>
+      </div>
+      <% }) %>
+      <!-- End Form -->
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+    <script>
+      const deletebtn = document.getElementById("deletebtn");
+      deletebtn.addEventListener("click", () => {
+        axios
+          .delete(`/api/delete/${deletebtn.getAttribute("data-slug")}`)
+          .then((res) => {
+            window.location.replace("/");
+          })
+          .catch((err) => console.error(err));
+      });
+    </script>
+  </body>
+</html>

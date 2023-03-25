@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard Blog</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <main class="login">
+      <!-- Start Head -->
+      <div class="head">
+        <h1>Dashboard</h1>
+      </div>
+      <!-- End Head -->
+      <!-- Start Form -->
+      <form class="form" id="form" method="POST" action="/api/login_dash">
+        <div>
+          <input type="text" id="email" name="email" autocomplete="off" />
+          <label for="email">Email <span>*</span></label>
+        </div>
+        <div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="off"
+          />
+          <label for="password">Password <span>*</span></label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <!-- End Form -->
+    </main>
+    <div id="popupContainer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

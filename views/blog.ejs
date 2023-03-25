@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assats/imgs/logo.png" />
+    <title>Magia Blog-Plus - <%= blog.title %></title>
+    <link rel="stylesheet" href="assats/css/style.css" />
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/d633f21f4a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- swiper Css  -->
+    <link rel="stylesheet" href="assats/css/swiper-bundle.min.css" />
+    <!-- normalize file  -->
+    <link rel="stylesheet" href="../css/normlaize.css" />
+    <!-- font awesome file -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- main css file -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- favicon.ico  -->
+    <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/" class="logo">
+          <img src="../images/logo.jpg" alt="smart dev plus logo" />
+        </a>
+        <div class="menu-icon" dir="rtl">
+          <span style="width: 35%"></span>
+          <span style="width: 70%"></span>
+          <span style="width: 100%"></span>
+        </div>
+        <ul class="nav" dir="rtl">
+          <li class="nav-item">
+            <a href="#" class="nav-link">الصفحه الرئسية</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">المقالات</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">الكتب</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">مواقع</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">اضافات</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="blog" id="blog" dir="rtl">
+      <div class="container">
+        <div class="main-title">
+          <h2>المقالة</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="articl">
+      <div class="container">
+        <div class="title_articl">
+          <div class="detals">
+            <div class="user detalss">
+              <i class="fa-solid fa-user"></i> <span><%= blog.user %></span>
+            </div>
+
+            <div class="date detalss">
+              <i class="fa-solid fa-calendar-days" dir="rtl"></i
+              ><span><%= blog.data %></span>
+            </div>
+
+            <div class="tags detalss">
+              <i class="fa-solid fa-tags"></i>
+              <span><%= blog.topics %></span>
+            </div>
+          </div>
+
+          <h1 dir="rtl"><%= blog.title %></h1>
+        </div>
+        <div class="img_articl">
+          <p dir="rtl"><%- blog.body %></p>
+        </div>
+      </div>
+    </section>
+    <footer dir="rtl">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="images/logo.jpg" alt="Landio logo" />
+            </a>
+            <p class="footer-text">
+              Magia Blog-Plus موقع ومدونة تهتم بنشر كل ما يفيد المبرمجين من
+              ادوات ومواقع تسهل عملية التعلم و الممارسة.
+            </p>
+            <ul class="social-list">
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100071043262787"
+                  class="social-link"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-link-box">
+            <ul class="footer-list">
+              <li>
+                <p class="footer-item-title">أحدث المقالات</p>
+              </li>
+              <li>
+                <a href="#" class="footer-link"
+                  >الطرق المتاحه لتعلم برمجة مواقع الويب</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link"
+                  >الطرق المتاحه لتعلم برمجة مواقع الويب</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link"
+                  >الطرق المتاحه لتعلم برمجة مواقع الويب</a
+                >
+              </li>
+            </ul>
+            <ul class="footer-list">
+              <li>
+                <p class="footer-item-title">أحدث الكتب</p>
+              </li>
+              <li>
+                <a href="#" class="footer-link">HTML, CSS</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">clean code</a>
+              </li>
+            </ul>
+            <ul class="footer-list">
+              <li>
+                <p class="footer-item-title">أحدث الاضافات</p>
+              </li>
+              <li>
+                <a href="#" class="footer-link">wappalyzer</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Grid Ruler</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2023
+            <a href="https://www.facebook.com/profile.php?id=100090867099566">
+              Magia Team</a
+            >
+            جميع الحقوق محفوظة.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

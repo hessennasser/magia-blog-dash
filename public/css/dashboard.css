@@ -1,0 +1,319 @@
+:root {
+  --main-color: #29acff;
+  --main-color-alt: #163850;
+  --second-color: #0040ff;
+  --white: #fff;
+  --gray: gray;
+  --black: #000;
+  --section-padding: 60px;
+  --transition: 0.4s;
+  --margin-top-main-section: 83px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+body::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(31, 31, 56);
+  opacity: 0.93;
+  z-index: -1;
+}
+main {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  text-align: center;
+  color: #fff;
+  border-radius: 16px;
+  margin-top: 150px;
+}
+main .element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c2c6c;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+main .element a,
+main .element span {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+/* Start Head */
+.head h1 {
+  margin-bottom: 16px;
+  font-size: 2.4rem;
+  color: var(--main-color);
+}
+.head p {
+  color: #ccc;
+}
+/* End Head */
+/* Start Form */
+.form {
+  margin-top: 16px;
+  width: 600px;
+}
+@media (max-width: 650px) {
+  .form {
+    width: 100%;
+  }
+}
+.form > div {
+  position: relative;
+  margin: 20px 0;
+}
+.login .form label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+.form label {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+.form input[type="file"] + label {
+  bottom: 40px;
+}
+.form label span {
+  color: var(--main-color);
+}
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 17px;
+}
+.login .form input:focus + label,
+.login .form input.open + label {
+  bottom: 30px;
+}
+.form textarea {
+  resize: none;
+}
+.login .form textarea + label {
+  top: 10px;
+}
+.login .form textarea:focus + label,
+.login .form textarea.open + label {
+  top: -10px;
+}
+.form button {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  color: var(--main-color);
+  font-size: 18px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.form button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+/* End Form */
+/* Start Popup */
+#popupContainer {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.popup {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+  font-family: sans-serif;
+  z-index: 100;
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .popup {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+.popup button {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.popup h2 {
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+/* End Popup */
+/* start header  */
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  z-index: 1000;
+  position: relative;
+}
+
+header .logo img {
+  width: 70px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+header .nav .nav-link {
+  color: var(--white);
+  transition: all var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+header .nav .nav-link::before {
+  content: "";
+  position: absolute;
+  transition: all var(--transition);
+  bottom: -5px;
+  right: 0%;
+  background: var(--main-color);
+  height: 3px;
+  width: 0%;
+  z-index: -1;
+}
+
+header .nav .nav-link:is(:hover, :focus)::before,
+header .nav .nav-link:is(.active)::before {
+  width: 100%;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: calc((100% - 6px) / 3);
+  z-index: 111;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.menu-icon:hover span {
+  width: 100% !important;
+  background-color: var(--main-color);
+}
+
+.menu-icon.active {
+  gap: 0;
+  justify-content: center;
+}
+
+.menu-icon.active span {
+  width: 100% !important;
+}
+
+.menu-icon.active span:first-child {
+  transform: rotate(45deg);
+}
+
+.menu-icon.active span:last-child {
+  transform: rotate(135deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header .nav {
+    display: none;
+  }
+
+  header .nav.active {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--main-color-alt);
+    z-index: 100;
+    height: 100vh;
+  }
+}
+
+/* end header  */

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script
+      src="https://cdn.tiny.cloud/1/0efubq5wifjpjkf470hjpigv460m6yats61ur8s6ulwq8c8z/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+  </head>
+  <body>
+    <%- include('./components/Sidebar') %>
+    <main>
+      <!-- Start Head -->
+      <div class="head">
+        <h1>Update Post</h1>
+      </div>
+      <!-- End Head -->
+      <!-- Start Form -->
+      <form
+        class="form"
+        id="form"
+        enctype="multipart/form-data"
+        method="POST"
+        action="/api/update/<%= blog.slug %>"
+      >
+        <div>
+          <input type="file" id="img" name="img" autocomplete="off" />
+          <label>Img</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            autocomplete="off"
+            value="<%= blog.title %>"
+          />
+          <label for="title">Title</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="decs"
+            name="decs"
+            autocomplete="off"
+            value="<%= blog.decs %>"
+          />
+          <label for="decs">Description</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="slug"
+            name="slug"
+            autocomplete="off"
+            value="<%= blog.slug %>"
+          />
+          <label for="slug">Slug</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="user"
+            name="user"
+            autocomplete="off"
+            value="<%= blog.user %>"
+          />
+          <label for="user">User</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="topics"
+            name="topics"
+            autocomplete="off"
+            value="<%= blog.topics %>"
+          />
+          <label for="topics">Topics</label>
+        </div>
+        <div>
+          <textarea id="body" name="body">
+            <%- blog.body %>
+          </textarea>
+        </div>
+        <button type="submit">Update Post</button>
+      </form>
+      <!-- End Form -->
+    </main>
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+      });
+    </script>
+  </body>
+</html>
